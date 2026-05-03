@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D'Avillas Fest</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+
+<!-- CORPO DO SITE -->
+
+<body>
+  <!-- CABEÇA DO SITE -->
+  <header>
+    <a href="https://wa.link/var8dg" class="ativo">AGENDAR AGORA</a>
+    <h1 class="logoheader">D' AVILLAS FEST</h1>
+  </header>
+
+  <!-- Função de escrita/cursor de Efeito Typewriter -->
+  <div class="typing-box">
+    <span id="typing"></span><span class="cursor">|</span>
+  </div>
+
+  <!-- CARROSSEL DE IMAGENS -->
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- IMAGENS DO CARROSSEL -->
+      <img src="/assets/SALAO DE FESTA.webp" alt="Imagem 1" class="carousel-image" />
+      <img src="/assets/SALAO DE FESTA.webp" alt="Imagem 2" class="carousel-image" />
+      <img src="/assets/SALAO DE FESTA.webp" alt="Imagem 3" class="carousel-image" />
+      <img src="/assets/SALAO DE FESTA.webp" alt="Imagem 4" class="carousel-image" />
+      <img src="/assets/SALAO DE FESTA.webp" alt="Imagem 5" class="carousel-image" />
+    </div>
+  </div>
+
+  <!-- Modal para zoom da imagem -->
+  <div class="modal-overlay" style="display: none">
+    <div class="modal-content">
+      <button class="close-button">×</button>
+      <img src="" alt="Zoom Image" class="modal-image" />
+    </div>
+  </div>
+
+  <!-- AGENDAMENTO BOTOES -->
+  <section class="agendamento-section">
+    <h2 class="agendamento-title">FAÇA SEU AGENDAMENTO</h2>
+    <p class="agendamento-subtitle">
+      Entre em contato conosco e reserve sua data especial
+    </p>
+
+    <div class="agendamento-buttons">
+      <a href="https://wa.link/var8dg" class="gold-btn btn-whatsapp">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" class="icon" />
+        WHATSAPP
+      </a>
+
+      <a href="tel:34988387442" class="gold-btn btn-phone">
+        <img
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1waG9uZS1pY29uIGx1Y2lkZS1waG9uZSI+PHBhdGggZD0iTTEzLjgzMiAxNi41NjhhMSAxIDAgMCAwIDEuMjEzLS4zMDNsLjM1NS0uNDY1QTIgMiAwIDAgMSAxNyAxNWgzYTIgMiAwIDAgMSAyIDJ2M2EyIDIgMCAwIDEtMiAyQTE4IDE4IDAgMCAxIDIgNGEyIDIgMCAwIDEgMi0yaDNhMiAyIDAgMCAxIDIgMnYzYTIgMiAwIDAgMS0uOCAxLjZsLS40NjguMzUxYTEgMSAwIDAgMC0uMjkyIDEuMjMzIDE0IDE0IDAgMCAwIDYuMzkyIDYuMzg0Ii8+PC9zdmc+"
+          class="icon" />
+        LIGUE AGORA
+      </a>
+
+      <a href="https://www.instagram.com/avillasfest/?utm_source=ig_web_button_share_sheet"
+        class="gold-btn btn-instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" class="icon" />
+        INSTAGRAM
+      </a>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE AVALIAÇÕES   -->
+  <section id="avaliacoes">
+    <h2 class="avaliacoes-title">AVALIAÇÕES</h2>
+    <p class="avaliacoes-subtitle">Deixe uma avaliação</p>
+
+    <div class="avaliacoes-container">
+      <form id="formAvaliacao">
+        <!-- Componente estrelas-->
+        <div class="stars">
+          <span class="star" data-index="1">⭐</span>
+          <span class="star" data-index="2">⭐</span>
+          <span class="star" data-index="3">⭐</span>
+          <span class="star" data-index="4">⭐</span>
+          <span class="star" data-index="5">⭐</span>
+        </div>
+
+        <div id="selected-rating" style="color: #f0b65f; font-size: 20px; margin-top: 10px">
+          0 de 5
+        </div>
+
+        <!-- Campo de nome -->
+        <input type="text" id="nomeAvaliador" placeholder="Seu nome" aria-label="Seu nome" />
+
+        <textarea id="textoAvaliacao" placeholder="Escreva sua avaliação aqui..."></textarea>
+
+        <button type="submit" class="btn-agendar">ENVIAR AVALIAÇÃO</button>
+      </form>
+
+      <!-- Lista de avaliações -->
+      <div id="reviewsWrapper">
+        <div id="reviewsGrid" class="reviews-grid" aria-live="polite"></div>
+
+        <!-- Paginação -->
+        <div id="pagination" class="pagination">
+          <button id="prevPage" class="page-btn">« Anterior</button>
+          <span id="currentPage">1</span>
+          <button id="nextPage" class="page-btn">Próximo »</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast (canto inferior direito) -->
+    <div id="toast" class="toast" role="status" aria-live="polite">
+      <strong>Avaliação enviada!</strong>
+      <div>Obrigado pelo seu feedback.</div>
+    </div>
+  </section>
+
+  <!-- Galeria de Fotos -->
+  <section class="galeria-section">
+    <h2 class="galeria-title">CONHEÇA NOSSO ESPAÇO</h2>
+    <p class="galeria-subtitle">Veja cada detalhe do nosso salão</p>
+
+    <div class="galeria-grid">
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 1" />
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 2" />
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 3" />
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 4" />
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 5" />
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 6" />
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 7" />
+      <img src="/assets/SALAO DE FESTA.webp" class="galeria-img" alt="Salão 8" />
+    </div>
+  </section>
+
+  <!-- Linha antes do Footer -->
+  <div class="footer-divider"></div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- CONTATOS -->
+      <div class="footer-left">
+        <h3>Informações de contato</h3>
+
+        <!-- whatsapp -->
+        <a href="https://wa.link/var8dg" class="footer-link">
+          <span class="icon whatsapp"></span>
+          (34) 98838-7442
+        </a>
+
+        <!-- instagram -->
+        <a href="https://www.instagram.com/avillasfest/?utm_source=ig_web_button_share_sheet" class="footer-link">
+          <span class="icon instagram"></span>
+          @avillasfest
+        </a>
+
+        <!-- tiktok -->
+        <a href="https://www.tiktok.com/@avillasfest?is_from_webapp=1&sender_device=pc" class="footer-link">
+          <span class="icon tiktok"></span>
+          @avillasfest
+        </a>
+
+        <!-- facebook -->
+        <a href="https://www.facebook.com/share/1NN1Fq6Kmx/" class="footer-link">
+          <span class="icon facebook"></span>
+          D' Avillas Fest
+        </a>
+
+        <!-- email -->
+        <a href="mailto:avillasfest@gmail.com" class="footer-link">
+          <span class="icon email"></span>
+          avillasfest@gmail.com
+        </a>
+
+        <!-- google maps -->
+        <a href="https://maps.app.goo.gl/mWhbaEsfLavBHic19" class="footer-link">
+          <span class="icon location"></span>
+          Rua Fábio Masini, 103
+        </a>
+      </div>
+
+      <!-- MAPA -->
+      <div class="footer-right">
+        <h3>Localização</h3>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1334.678814876317!2d-48.28265360911576!3d-18.885228367651123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a4442a4e497963%3A0x35a1402afce3a709!2sR.%20F%C3%A1bio%20Masini%2C%20103%20-%20Santa%20Rosa%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038401-750!5e0!3m2!1spt-BR!2sbr!4v1767811311545!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border: 0" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" style="border: 0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 D'Avillas Fest & Nex7 Step. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- CONEXÃO JS -->
+  <script src="/script.js"></script>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
